@@ -10,9 +10,9 @@ class TestOddAvg(unittest.TestCase):
         numbers = [2, 4, 6, 10]
         self.assertEqual(odd_average(numbers), 0)
 
-    # def test_odd_average_with_letters(self):
-    #     letters = [a, b, c]
-    #     self.self.assertEqual(odd_average(numbers), 0)
+    def test_odd_average_with_letters(self):
+        letters = ["a", "b", "c"]
+        self.assertEqual(odd_average(letters), 0)
 
 if __name__ == '__main__':
     unittest.main()
