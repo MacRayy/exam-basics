@@ -69,6 +69,9 @@ class Deck(object):
         else:
             pass
 
+    def draw_card(self):
+        pass
+
 deck = Deck(12)
 # print(deck)
 # Should print out:
