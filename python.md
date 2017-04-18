@@ -36,14 +36,20 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
+1:   calls the function
+2:   name of the function
+3:   argument, in his case it will be used in the 'for loop' as the second parameter of the range
+4:   actual function that works and counts the total in this case
+5:   variable, now it is set to zero
+6:   end of the function, it stops the function and returns the total value
+7:   new total variable, it has the value after the counting
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+class ClassName(object):
+    def __(init)__(self):               <-- constructor
+        self.variable = "some value"
+        self.function()
+
+The __init__ method is the constructor of the ClassName object and it instantly sets up its base values and/or class different methods, when it is instantiated later.
+In this case the __init__ method sets up the self.variable to "some value" and calls the self.function() method.
