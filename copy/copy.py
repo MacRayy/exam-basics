@@ -13,10 +13,15 @@ class Controller(object):
         help_display = Display()
         if len(sys.argv) == 1:
             help_display.help_text()
+        elif len(sys.argv) == 2:
+            help_display.help_text_no_destination()
 
 class Display(object):
     def help_text(self):
         return print("copy [source] [destination]")
+
+    def help_text_no_destination(self):
+        return print("No destination provided")
 
 run_copy = Controller()
 run_copy.argument_reader()
