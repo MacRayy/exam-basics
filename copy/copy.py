@@ -7,6 +7,7 @@
 # When both arguments provided and the source is a file
 # Read all contents from it and write it to the destination
 import sys
+import os
 
 class Controller(object):
     def argument_reader(self):
@@ -15,6 +16,12 @@ class Controller(object):
             help_display.help_text()
         elif len(sys.argv) == 2:
             help_display.help_text_no_destination()
+        elif len(sys.argv) == 3:
+            file_name = sys.argv[1]
+            if os.path.isfile(sys.argv[1]):
+                print("its a file")
+            else:
+                help_display.no_file()
 
 class Display(object):
     def help_text(self):
@@ -22,6 +29,9 @@ class Display(object):
 
     def help_text_no_destination(self):
         return print("No destination provided")
+
+    def no_file(self):
+        return print("Source is not a file")
 
 run_copy = Controller()
 run_copy.argument_reader()
