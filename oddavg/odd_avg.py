@@ -10,8 +10,9 @@ def odd_average(list_of_numbers):
     sum_odd_numbers = 0
     for odd_list_item in odd_list:
         sum_odd_numbers += odd_list_item
-    average = sum_odd_numbers / len(odd_list)
-    return average
-
-numbers = [1, 2, 3, 4, 5, 10, 1]
-print(odd_average(numbers))
+    try:
+        average = sum_odd_numbers / len(odd_list)
+        return average
+    except ZeroDivisionError:
+        print("If you devide with zero the world will collapse")
+        return 0
