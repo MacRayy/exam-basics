@@ -24,6 +24,10 @@ class Deck(object):
     def __init__(self, number_of_cards):
         self.number_of_cards = int(number_of_cards)
         self.card_list = []
+        self.club_list = []
+        self.diamond_list = []
+        self.heart_list = []
+        self.spade_list = []
 
         self.fill_deck()
         print(str(self.number_of_cards) + " cards - " + str(len((self.card_list))) + " " + self.card_list[0].color + self.card_list[0].value)
@@ -31,6 +35,7 @@ class Deck(object):
     def card_value_generator(self):
         card_value = ["2", "3", "4", "5", "6", "7", "8", "9", "10" "Jack", "Queen", "King", "Ace"]
         random_value = random.randrange(0, len(card_value))
+        card_value.remove(card_value[random_value])
         return card_value[random_value]
 
     def fill_deck(self):
@@ -45,7 +50,6 @@ class Deck(object):
                     self.card_list.append(club_card)
             else:
                 for club_card in range(quater_deck):
-                    # while 
                     club_card = Card("Club", self.card_value_generator())
                     self.card_list.append(club_card)
         else:
