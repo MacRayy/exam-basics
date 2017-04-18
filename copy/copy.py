@@ -19,7 +19,8 @@ class Controller(object):
         elif len(sys.argv) == 3:
             file_name = sys.argv[1]
             if os.path.isfile(sys.argv[1]):
-                print("its a file")
+                copy = Copy()
+                copy.copy_file()
             else:
                 help_display.no_file()
 
@@ -32,6 +33,12 @@ class Display(object):
 
     def no_file(self):
         return print("Source is not a file")
+
+class Copy(object):
+    def copy_file(self):
+        file_to_copy = open(sys.argv[1], "r")
+        file_cotent = file_to_copy.read()
+        print(file_cotent)
 
 run_copy = Controller()
 run_copy.argument_reader()
