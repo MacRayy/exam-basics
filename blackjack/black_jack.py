@@ -18,7 +18,7 @@ class Card(object):
         self.value = value
 
     def display_card(self):
-        print (str(self.value) + self.color)
+        print (str(self.value) + " " + self.color)
 
 class Deck(object):
     def __init__(self, number_of_cards):
@@ -30,12 +30,12 @@ class Deck(object):
         self.spade_list = []
 
         self.fill_deck()
-        print(str(self.number_of_cards) + " cards - " + str(len((self.card_list))) + " " + self.card_list[0].color + self.card_list[0].value)
+        print(str(self.number_of_cards) + " cards - " + str(len((self.club_list))) + " " + self.club_list[0].color + " " + str(len((self.diamond_list))) + " " + self.diamond_list[0].color)
 
     def card_value_generator(self):
         card_value = ["2", "3", "4", "5", "6", "7", "8", "9", "10" "Jack", "Queen", "King", "Ace"]
         random_value = random.randrange(0, len(card_value))
-        card_value.remove(card_value[random_value])
+        # card_value.remove(card_value[random_value])
         return card_value[random_value]
 
     def fill_deck(self):
@@ -43,15 +43,29 @@ class Deck(object):
             quater_deck = 0
             quater_deck = self.number_of_cards // 4
             if quater_deck * 4 != self.number_of_cards:
+                pass
                 #needs fixig
-                first_quater_deck = quater_deck + 1
-                for club_card in range(first_quater_deck):
-                    club_card = Card("Club")
-                    self.card_list.append(club_card)
+                # first_quater_deck = quater_deck + 1
+                # for club_card in range(first_quater_deck):
+                #     club_card = Card("Clubs")
+                #     self.card_list.append(club_card)
             else:
                 for club_card in range(quater_deck):
-                    club_card = Card("Club", self.card_value_generator())
+                    club_card = Card("Clubs", self.card_value_generator())
                     self.card_list.append(club_card)
+                    self.club_list.append(club_card)
+                for diamond_card in range(quater_deck):
+                    diamond_card = Card("Diamonds", self.card_value_generator())
+                    self.card_list.append(diamond_card)
+                    self.diamond_list.append(diamond_card)
+                for heart_card in range(quater_deck):
+                    heart_card = Card("Hearts", self.card_value_generator())
+                    self.card_list.append(heart_card)
+                    self.heart_list.append(heart_card)
+                for spade_card in range(quater_deck):
+                    spade_card = Card("Spades", self.card_value_generator())
+                    self.card_list.append(spade_card)
+                    self.diamond_list.append(spade_card)
         else:
             pass
 
