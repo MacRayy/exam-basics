@@ -26,13 +26,13 @@ class Controller(object):
 
 class Display(object):
     def help_text(self):
-        return print("copy [source] [destination]")
+        print("copy [source] [destination]")
 
     def help_text_no_destination(self):
-        return print("No destination provided")
+        print("No destination provided")
 
     def no_file(self):
-        return print("Source is not a file")
+        print("Source is not a file")
 
 class Copy(object):
     def copy_file(self):
